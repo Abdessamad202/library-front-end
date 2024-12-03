@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Books</title>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+  <style>
+    .swiper-container {
+      overflow: hidden;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: rgb(0, 0, 0);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+    }
+
+    .swiper-button-next {
+      right: 0;
+      transform: translate(100%, -50%);
+    }
+
+    .swiper-button-prev {
+      left: 0;
+      transform: translate(-100%, -50%);
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Featured Books Section -->
+  <div class="container mx-auto py-8">
+    <h2 class="text-2xl font-bold text-center mb-6">Featured Books</h2>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="https://via.placeholder.com/150x200" alt="Book 1" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">Featured Book</h3>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="https://via.placeholder.com/150x200" alt="Book 2" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">Featured Book</h3>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="https://via.placeholder.com/150x200" alt="Book 3" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">Featured Book</h3>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="https://via.placeholder.com/150x200" alt="Book 4" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">Featured Book</h3>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="https://via.placeholder.com/150x200" alt="Book 4" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">Featured Book</h3>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      slidesPerView: 4,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+        1280: { slidesPerView: 4 },
+      },
+    });
+  </script>
+</body>
+</html>
+<button class="text-sm font-medium text-gray-800 hover:text-orange-500 flex items-center">
+  CATEGORIES
+  <svg class="ml-1 h-4 w-4 text-gray-500 group-hover:text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M5.5 7l4.5 4.5L14.5 7H5.5z" />
+  </svg>
+</button>
+<!-- Dropdown Menu -->
+<div id="dropdown" class="absolute   left-0  mt-2 w-48 bg-white focus:block group-hover:block hidden shadow-lg rounded-lg border border-gray-100">
+  <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-orange-100 hover:text-orange-600">Subpage 1</a>
+  <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-orange-100 hover:text-orange-600">Subpage 2</a>
+</div>
+</div>
+
+<a href="#new" class="text-sm font-medium text-gray-800 hover:text-orange-500">NEW BOOKS</a>
+<a href="#" class="text-sm font-medium text-gray-800 hover:text-orange-500">POPULAR</a>
+<a href="#" class="text-sm font-medium text-gray-800 hover:text-orange-500">OFFER</a>
+<a href="#" class="text-sm font-medium text-gray-800 hover:text-orange-500">ARTICLES</a>
+</div>

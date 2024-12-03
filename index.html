@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    /* Custom styling for the hero section */
+    body{
+      background-color: #f8f9fa;
+
+    }
+    .hero-section {
+      padding: 4rem 0;
+    }
+
+    .swiper-container,.custom-slider {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #ff7f50;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      color: #e74c3c;
+    }
+    .swiper-slide{
+      transition: 0.3s;
+      scale: 0.8;
+    }
+    .swiper-container .swiper-slide-active
+    {
+      scale: 1;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="bg-white shadow-md">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <a href="#" class="text-2xl font-extrabold text-gray-800 tracking-tight">A<span class="text-orange-500">IBRARY</span></a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-500">
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Desktop Navigation Links -->
+          <div id="menu-links" class="hidden md:flex space-x-8">
+            <a href="#" class="text-sm font-medium text-orange-500 hover:text-orange-600">HOME</a>
+
+            <!-- Categories Dropdown -->
+            <div class="relative group" id="categories-menu">
+              <button class="text-sm font-medium text-gray-800 hover:text-orange-500 flex items-center">
+                CATEGORIES
+                <svg class="ml-1 h-4 w-4 text-gray-500 group-hover:text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M5.5 7l4.5 4.5L14.5 7H5.5z" />
+                </svg>
+              </button>
+              <!-- Dropdown Menu -->
+              <div id="dropdown" class="absolute   left-0  mt-2 w-48 bg-white focus:block group-hover:block hidden shadow-lg rounded-lg border border-gray-100">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-orange-100 hover:text-orange-600">Subpage 1</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-orange-100 hover:text-orange-600">Subpage 2</a>
+              </div>
+            </div>
+
+            <a href="#new" class="text-sm font-medium text-gray-800 hover:text-orange-500">NEW BOOKS</a>
+            <a href="#" class="text-sm font-medium text-gray-800 hover:text-orange-500">POPULAR</a>
+            <a href="#" class="text-sm font-medium text-gray-800 hover:text-orange-500">OFFER</a>
+            <a href="#" class="text-sm font-medium text-gray-800 hover:text-orange-500">ARTICLES</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile Full-Screen Menu -->
+      <div id="mobile-menu" class="fixed inset-0 bg-white hidden z-50 flex flex-col items-center justify-center space-y-8">
+        <a href="#" class="text-2xl font-bold text-orange-500 hover:text-orange-600">HOME</a>
+        <div class="relative group ">
+          <button class="text-2xl font-bold text-gray-800 hover:text-orange-500 flex items-center">
+            CATEGORIES
+            <svg class="ml-1 h-4 w-4 text-gray-500 group-hover:text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.5 7l4.5 4.5L14.5 7H5.5z" />
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-0 hidden mt-2 w-48 bg-white shadow-lg rounded-lg border border-gray-100 group-hover:block">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-orange-100 hover:text-orange-600">Subpage 1</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-800 hover:bg-orange-100 hover:text-orange-600">Subpage 2</a>
+          </div>
+        </div>
+        <a href="#" class="text-2xl font-bold text-gray-800 hover:text-orange-500">NEW BOOKS</a>
+        <a href="#" class="text-2xl font-bold text-gray-800 hover:text-orange-500">POPULAR</a>
+        <a href="#" class="text-2xl font-bold text-gray-800 hover:text-orange-500">OFFER</a>
+        <a href="#" class="text-2xl font-bold text-gray-800 hover:text-orange-500">ARTICLES</a>
+        <a href="#" class="text-2xl font-bold text-gray-800 hover:text-orange-500">DOWNLOAD APP</a>
+        <button id="close-menu-button" class="absolute top-6 right-6 text-gray-800 focus:outline-none">
+          <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+      const menuButton = document.getElementById('mobile-menu-button');
+      const closeButton = document.getElementById('close-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+      });
+
+      closeButton.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    </script>
+  </header>
+
+
+
+
+  <section class="hero-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Text Content -->
+        <div class="flex flex-col justify-center h-full">
+          <h1 class="text-4xl font-bold text-gray-800 sm:text-5xl">
+            Discover the World of Books with <span class="text-orange-500">BOOKSAW</span>
+          </h1>
+          <p class="mt-4 text-gray-600 text-lg sm:text-xl">
+            Your gateway to knowledge, imagination, and inspiration. Explore a curated collection of books tailored to
+            spark your curiosity and fuel your passion for reading.
+          </p>
+          <div class="mt-6 space-x-4">
+            <a href="#explore"
+              class="inline-block rounded-md bg-orange-500 px-6 py-3 text-white text-lg font-medium hover:bg-orange-600">
+              Start Exploring
+            </a>
+          </div>
+        </div>
+
+        <!-- Swiper Container for Image Slider -->
+        <div class="swiper-container ">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <img src="psych-money-cover.jpg"
+                alt="Book Image 1" />
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <img src="psych-money-cover.jpg" alt="Image 2" />
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <img src="psych-money-cover.jpg" alt="Image 3" />
+
+            </div>
+            <div class="swiper-slide">
+              <img src="psych-money-cover.jpg"
+                alt="Book Image 1" />
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <img src="psych-money-cover.jpg" alt="Image 2" />
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <img src="psych-money-cover.jpg" alt="Image 3" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<section id="new">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-center mb-6">New Books</h2>
+    <div class="custom-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="psych-money-cover.jpg" alt="Book 4" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">New Book</h3>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="psych-money-cover.jpg" alt="Book 4" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">New Book</h3>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="psych-money-cover.jpg" alt="Book 4" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">New Book</h3>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="psych-money-cover.jpg" alt="Book 4" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">New Book</h3>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="bg-white shadow-md p-4 rounded-lg text-center">
+            <img src="psych-money-cover.jpg" alt="Book 4" class="w-full h-60 object-cover mb-4">
+            <h3 class="text-lg font-semibold mb-2">New Book</h3>
+          </div>
+        </div>
+      </div>
+      <!-- Navigation buttons -->
+      <div class="custom-button-next"></div>
+      <div class="custom-button-prev"></div>
+    </div>
+  </div>
+</section>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper-container', {
+  loop: true, // Infinite loop
+  slidesPerView: 3, // Show 3 slides
+  centeredSlides: true, // Center the active slide
+  autoplay: {
+    delay: 3000, // 5 seconds for auto transition
+  },
+  navigation: {
+    nextEl: '.swiper-button-next', // Next button
+    prevEl: '.swiper-button-prev', // Previous button
+  },
+  // on: {
+  //   slideChangeTransitionEnd: () => {
+  //     // Ensure the scale effect updates properly on transition end
+  //     document.querySelectorAll('.swiper-slide').forEach((slide) => {
+  //       slide.style.transform = 'scale(0.7)'; // Reset scale for all slides
+  //     });
+  //     const activeSlide = document.querySelector('.swiper-slide.swiper-slide-active');
+  //     if (activeSlide) {
+  //       activeSlide.style.transform = 'scale(1.1)'; // Scale up the active slide
+  //     }
+  //   },
+  // },
+});
+const customSlider = new Swiper('.custom-slider', {
+  loop: true,
+  slidesPerView: 2,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.custom-button-next',
+    prevEl: '.custom-button-prev',
+  },
+  breakpoints: {
+    slidesPerView: 1 ,
+    640: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+    1280: { slidesPerView: 4 },
+  },
+});
+
+  </script>
+<script>
+  </script>
+</body>
+
+</html>
