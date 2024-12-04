@@ -1,0 +1,19 @@
+.swiper-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.swiper-slide {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.swiper-slide h5 {
+  margin-top: 10px;
+}
+.new-books-slider{
+  overflow: hidden;
+}
