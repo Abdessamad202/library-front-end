@@ -1,19 +1,30 @@
-.swiper-slide img {
+.new-books-slider .swiper-slide img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
 }
 
-.swiper-slide {
+.new-books-slider .swiper-slide {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.swiper-slide h5 {
+.new-books-slider .swiper-slide h5 {
   margin-top: 10px;
 }
 .new-books-slider{
   overflow: hidden;
+}
+.new-books {
+  z-index: -1;
+  position: relative;
+
+}
+.location {
+  background-color:  #f8f9fa;
+}
+body {
+  background-color: #f8f9fa;
 }

@@ -1,4 +1,4 @@
-let swiperHome = new Swiper('.home-swiper', {
+let swiperHome = new Swiper('.hero-swiper', {
   loop: true,
   spaceBetween: -24, // Default space between slides
   grabCursor: true,
@@ -56,7 +56,6 @@ let NewBooksSwiper = new Swiper('.new-books-slider', {
   loop: true,
   // slidesPerView: 3,
   spaceBetween: 30,
-  centeredSlides: true,
   grabCursor: true,
   autoplay: {
     delay: 3000,
@@ -78,6 +77,8 @@ let NewBooksSwiper = new Swiper('.new-books-slider', {
     768: {
       slidesPerView: 2,
       spaceBetween: 20,
+      centeredSlides: true,
+
     },
     991: {
       slidesPerView: 4,

@@ -20,7 +20,7 @@ ul, li {
 
 body {
   background-color: #f8f9fa;
-  height: 139vh;
+  height: 229vh;
 }
 
 .Nav-bar-a {
@@ -28,6 +28,7 @@ body {
   background-color: #ffffff;
   width: 100%;
   height: 70px;
+  z-index: 100;
   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
   .Nav-bar-a .logo {
@@ -179,6 +180,12 @@ ul , li {
     padding: 20px 15px;
     font-size: 20px;
     cursor: pointer;
+  }
+  .col-content {
+    text-align: center;
+  }
+  .inf li {
+    text-align: center;
   }
   .small-screen .Nav-menu {
     position: absolute;

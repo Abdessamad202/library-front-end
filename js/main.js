@@ -33,3 +33,38 @@ const NavMenu = document.querySelector(".small-screen .Nav-menu");
 menuIcon.addEventListener("click", () => {
   NavMenu.classList.toggle("expanded");
 });
+
+document.querySelectorAll('li.Nav-item a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href'); // Get the target ID from the href
+    const target = document.querySelector(targetId); // Find the target element
+
+    if (target) { // Check if the target exists
+      const offset = 100; // Adjust this value based on your header's height
+      const targetPosition = target.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+window.addEventListener('scroll', function() {
+  const scrollToTopButton = document.getElementById('scrollToTop');
+  if (window.scrollY > 300) { // Show the button when scrolled down 300px
+    scrollToTopButton.style.opacity = 1;
+  } else {
+    scrollToTopButton.style.opacity = 0;
+  }
+});
+
+// Smooth scroll to the top when the button is clicked
+document.getElementById('scrollToTop').addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
