@@ -84,9 +84,5 @@ let NewBooksSwiper = new Swiper('.new-books-slider', {
       slidesPerView: 4,
       spaceBetween: 30,
     },
-    1024: {
-      slidesPerView: 6,
-      spaceBetween: 30,
-    }
   }
 });
