@@ -27,7 +27,7 @@ body {
   position: fixed;
   background-color: #ffffff;
   width: 100%;
-  height: 70px;
+  height: 50px;
   z-index: 100;
   box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -51,7 +51,7 @@ body {
 
 /* Base styles for Navigation menu */
 .Nav-bar-a .Nav-wrap .Nav-menu .Nav-item {
-  padding: 20px;
+  padding: 10px 20px;
   background-color: #ffffff;
   font-size: 16px;
   position: relative;
@@ -111,13 +111,32 @@ body {
   width: 120px;
   max-height: 0;
   z-index: 3;
-  top: 64px;
+  top: 47px;
   left: 30px;
   transition: max-height 0.5s;
   overflow: hidden;
   background-color: #ffffff;
 }
-  .Nav-wrap {
+.Nav-link{
+  position: relative;
+}
+.Nav-link.sub::after{
+  background-color: white;
+}
+.Nav-link::after{
+  content:  "";
+  background-color: #000000;
+  width: 0%;
+  height: 2.5px;
+  border-radius: 10px;
+  bottom: -2.5px; left: 0;
+  position: absolute;
+  transition: 0.3s;
+}
+.Nav-link:hover::after{
+  width: 100%;
+}
+.Nav-wrap {
     width: 1000px; /* Ensure Nav-bar width is full */
   }.small-screen {
     display: none;
