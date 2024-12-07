@@ -124,3 +124,14 @@ ul li a.active {
   background-color: #f6f6f6;
   color: var(--blue-color);
 }
+@media (max-width: 991px) {
+
+.table-responsive{
+  overflow: scroll;
+  /* padding: 20px; */
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive table{
+  min-width: 991px;
+}
+}
