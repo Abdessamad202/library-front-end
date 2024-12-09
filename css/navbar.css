@@ -178,9 +178,6 @@ body {
   .large-screen {
     display: block;
   }
-  .menu-icon {
-    display: none;
-  }
 }
 ul , li {
   width: 100%;
@@ -209,7 +206,7 @@ ul , li {
   .small-screen .Nav-menu {
     position: absolute;
     background-color: #ffffff;
-    top: 70px;
+    top: 50px;
     left: 0 ;
     max-height: 0px;
     overflow: hidden;

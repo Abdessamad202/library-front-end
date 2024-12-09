@@ -36,7 +36,7 @@ menuIcon.addEventListener("click", () => {
 
 document.querySelectorAll('li.Nav-item a').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    e.preventDefault();
+    // e.preventDefault();
 
     const targetId = this.getAttribute('href'); // Get the target ID from the href
     const target = document.querySelector(targetId); // Find the target element

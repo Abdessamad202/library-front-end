@@ -45,9 +45,11 @@
             </div>
           </li>
           <li class="Nav-item profile-picture">
-            <div class="drop-element">
-              <a href=""><img src="./user-profile-icon.webp" alt=""></a>
-            </div>
+            <a href="./profile.html">
+              <div class="drop-element">
+                <img src="./user-profile-icon.webp" width="30" class="profile-picture" alt="">
+              </div>
+            </a>
           </li>
         </ul>
       </Nav>
@@ -82,9 +84,19 @@
         </ul>
       </Nav>
       <!-- Small Screen Nav -->
-      <div class="menu-icon">
-        <i class="fa-solid fa-bars"></i>
+      <div class="menu-icon d-flex gap-4 d-lg-none">
+        <li class="Nav-item profile-picture">
+          <a href="./profile.html">
+            <div class="drop-element">
+              <img src="./user-profile-icon.webp" width="30" class="profile-picture" alt="">
+            </div>
+          </a>
+        </li>
+        <div>
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
+
     </div>
   </div>
   <section class="hero-section">
@@ -100,9 +112,9 @@
             curated collection of books tailored to spark your curiosity and
             fuel your passion for reading.
           </p>
-          <a href="#explore" class="btn btn-success btn-lg mt-4 px-4 py-2 text-white fw-medium">
-            Start Exploring
-          </a>
+          <button class="explore mt-4"><a href="#explore" class=" fw-medium">
+            <span>Start Exploring</span>
+          </a></button>
         </div>
         <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
           <div class="swiper-container hero-swiper">
@@ -298,9 +310,6 @@
   </footer>
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-
-  </script>
   <script src="./js/main.js"></script>
   <script src="./js/swipe.js"></script>
 </body>

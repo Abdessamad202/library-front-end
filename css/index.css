@@ -82,3 +82,39 @@ html {
 .new-books-slider img {
   width: 75%;
 }
+.explore{
+  padding: 10px 20px;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+.explore::after{
+  content: "Start Exploring";
+  padding: 10px 20px;
+  border: 1px solid #000;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  /* width: 0; */
+  height: 100%;
+  color: #ffffff;
+  width: 100%;
+  background-color: #000;
+  transition: width 0.3s ease;
+  transition: right 0.3s ease;
+  /* z-index: -1; */
+}
+.explore span{
+  position: relative;
+  top: 0px;
+  transition: top 0.3s ease;
+
+  z-index: 1;
+}
+.explore:hover span{
+  top: 30px;
+}
+.explore:hover::after{
+  right: 0;
+
+}

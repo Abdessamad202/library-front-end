@@ -86,3 +86,16 @@ let NewBooksSwiper = new Swiper('.new-books-slider', {
     },
   }
 });
+// const swiperBooks = new Swiper('.books-slider', {
+//   loop: true,
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+//   slidesPerView: 3,
+//   spaceBetween: 20,
+// });
