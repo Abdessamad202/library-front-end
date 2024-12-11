@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: black;
+    }
+    .display-none{
+      display: none;
+    }
+
+    .notification{
+      position: fixed;
+      bottom: 50px;
+      right: -250px;
+      box-sizing: border-box;
+      background-color: white;
+      /* color: white; */
+      transition: all 0.5s ease;
+      padding: 20px 30px;
+      font-weight: bold;
+      border-radius: 5px;
+      width: 200px;
+      /* height: 20px; */
+    }
+    .notification.active{
+      right: 50px;
+    }
+  </style>
+</head>
+<body>
+  <input type="text">
+  <button type="button">Send</button>
+  <div class="notification"></div>
+</body>
+<script>
+  const notification = document.querySelector('.notification');
+  const input = document.querySelector('input');
+  const button = document.querySelector('button');
+
+  button.addEventListener('click', () => {
+    notification.innerHTML = input.value;
+
+    if (notification.innerHTML) {
+      notification.classList.add('active');
+      setTimeout(() => {
+        notification.classList.remove('active');
+      }, 3000);
+    }
+  });
+</script>
+</html>
